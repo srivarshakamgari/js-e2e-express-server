@@ -15,3 +15,15 @@ jobs:
   - script: touch f1
 
 
+- job: FileUpload
+  steps:
+  - task: S3Upload@1
+    inputs:
+      awsCredentials: 'AWS_SANDBOX'
+      regionName: 'us-east-1'
+      bucketName: 'azure-devops-1'
+      sourceFolder: '.'
+      globExpressions: '**'
+      targetFolder: '/'
+
+

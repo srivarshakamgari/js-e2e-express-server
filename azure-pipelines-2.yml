@@ -13,10 +13,6 @@ jobs:
   - script: touch f1/f1
   - script: ls -lart
   - script: pwd
-
-
-- job: FileUpload
-  steps:
   - task: S3Upload@1
     inputs:
       awsCredentials: 'AWS_SANDBOX'
